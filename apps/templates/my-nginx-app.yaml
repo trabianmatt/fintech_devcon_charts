@@ -1,4 +1,4 @@
-{{ if .Values.deployWatchman }}
+{{ if .Values.deployNginx }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
