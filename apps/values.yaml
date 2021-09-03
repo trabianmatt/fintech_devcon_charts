@@ -7,4 +7,4 @@ spec:
 
 deployWatchman: true
 deployNginx: true
-deployWatchmanIngress: false
+deployWatchmanIngress: true
