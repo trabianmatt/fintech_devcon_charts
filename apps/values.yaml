@@ -4,7 +4,7 @@ spec:
   source:
     repoURL: https://github.com/ZSuiteTech/fintech_devcon_charts
     targetRevision: HEAD
-    
-deployWatchman: false
-deployNginx: false
+
+deployWatchman: true
+deployNginx: true
 deployWatchmanIngress: false
