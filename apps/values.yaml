@@ -6,4 +6,4 @@ spec:
     targetRevision: HEAD
 
 deployWatchman: true
-deployWatchmanIngress: false
+deployWatchmanIngress: true
