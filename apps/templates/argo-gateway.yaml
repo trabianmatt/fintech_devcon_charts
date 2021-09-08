@@ -1,0 +1,23 @@
+{{ if .Values.deployArgoIngress }}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: watchman-gateway
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/ZSuiteTech/fintech_devcon_charts.git
+    targetRevision: HEAD
+    path: watchman-gateway    
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: moov
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+{{ end }}
