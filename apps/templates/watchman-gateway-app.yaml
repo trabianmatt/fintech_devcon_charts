@@ -9,7 +9,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/ZSuiteTech/fintech_devcon_charts.git
+    repoURL: {{ .Values.source.repoURL }}
     targetRevision: HEAD
     path: watchman-gateway    
   destination:

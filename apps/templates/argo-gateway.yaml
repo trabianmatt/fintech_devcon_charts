@@ -2,19 +2,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: watchman-gateway
+  name: argo-gateway
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
-    repoURL: https://github.com/ZSuiteTech/fintech_devcon_charts.git
+    repoURL: {{ .Values.source.repoURL }}
     targetRevision: HEAD
-    path: watchman-gateway    
+    path: argo-gateway    
   destination:
     server: https://kubernetes.default.svc
-    namespace: moov
+    namespace: argocd
   syncPolicy:
     automated:
       selfHeal: true
