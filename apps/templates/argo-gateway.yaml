@@ -1,8 +1,8 @@
-{{ if .Values.deployWatchmanIngress }}
+{{ if .Values.deployArgoIngress }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: watchman-gateway
+  name: argo-gateway
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -11,10 +11,10 @@ spec:
   source:
     repoURL: {{ .Values.source.repoURL }}
     targetRevision: HEAD
-    path: watchman-gateway    
+    path: argo-gateway    
   destination:
     server: https://kubernetes.default.svc
-    namespace: moov
+    namespace: argocd
   syncPolicy:
     automated:
       selfHeal: true
