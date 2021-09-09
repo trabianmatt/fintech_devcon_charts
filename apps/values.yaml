@@ -7,4 +7,3 @@ spec:
 
 deployWatchman: false
 deployWatchmanIngress: false
-deployArgoIngress: true
